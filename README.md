@@ -1,7 +1,6 @@
 # About ERNI Prediction System
 
-ERNI Prediction System is an environment that allow to train a IA with external sensors data and create a
-prediction.
+ERNI Prediction System is an environment that allow to train a IA with external sensors data in order to create predictions.
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
