@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import {AppRouterCacheProvider} from "@mui/material-nextjs/v13-appRouter";
+import DrawerAppBar from "@/app/components/DrawerAppBar";
+import {AppProvider} from "@/app/providers/appProvider";
+import Backdrop from "@mui/material/Backdrop";
+import SimpleBackdrop from "@/app/components/Backdrop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,13 +15,29 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
+  props: any
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <head>
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <title>ERNI Prediction System</title>
+    </head>
+      <body className={inter.className}>
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+            <AppProvider>
+                <SimpleBackdrop />
+                <DrawerAppBar />
+                {children}
+            </AppProvider>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 }
