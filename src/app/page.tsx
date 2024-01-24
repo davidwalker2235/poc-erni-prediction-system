@@ -1,10 +1,15 @@
 "use client"
 
 import Main from "@/app/main";
-import {AppProvider} from "@/app/providers/appProvider";
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+// Create a client
+const queryClient = new QueryClient()
 
 export default function Home() {
   return (
-      <Main />
+      <QueryClientProvider client={queryClient}>
+        <Main />
+      </QueryClientProvider>
   );
 }

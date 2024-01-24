@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import {AppRouterCacheProvider} from "@mui/material-nextjs/v13-appRouter";
-import DrawerAppBar from "@/app/components/DrawerAppBar";
+import DrawerAppBar from "@/app/components/drawerAppBar";
 import {AppProvider} from "@/app/providers/appProvider";
-import Backdrop from "@mui/material/Backdrop";
-import SimpleBackdrop from "@/app/components/Backdrop";
+import SimpleBackdrop from "@/app/components/backdrop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,13 +29,13 @@ export default function RootLayout({
         <title>ERNI Prediction System</title>
     </head>
       <body className={inter.className}>
-        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
-            <AppProvider>
-                <SimpleBackdrop />
-                <DrawerAppBar />
-                {children}
-            </AppProvider>
-        </AppRouterCacheProvider>
+            <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+                <AppProvider>
+                    <SimpleBackdrop />
+                    <DrawerAppBar />
+                    {children}
+                </AppProvider>
+            </AppRouterCacheProvider>
       </body>
     </html>
   );

@@ -1,44 +1,37 @@
 "use client"
 
-import Image from "next/image";
 import styles from "./page.module.css";
-import Button from '@mui/material/Button';
-import Typography from "@mui/material/Typography";
 import {useContext} from "react";
 import {AppContext} from "@/app/providers/appProvider";
+import Grid from '@mui/material/Grid';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import { styled } from '@mui/material/styles';
+import MultiActionAreaCard from "@/app/components/card";
+
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+}));
 
 export default function Main() {
     const context: any = useContext(AppContext)
     return (
         <main className={styles.main}>
-            <div className={styles.description}>
-                <p>
-                    Get started by editing&nbsp;
-                    <code className={styles.code}>src/app/page.tsx</code>
-                </p>
-                <div>
-                    <a
-                        href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        By{" "}
-                        <Image
-                            src="/vercel.svg"
-                            alt="Vercel Logo"
-                            className={styles.vercelLogo}
-                            width={100}
-                            height={24}
-                            priority
-                        />
-                    </a>
-                </div>
-            </div>
-            <Button variant="contained" onClick={() => context.setIsLoading(true)}>
-                <Typography sx={{fontFamily: "Apple Color Emoji"}}>
-                    Hello world
-                </Typography>
-            </Button>
+            <Grid container spacing={2}>
+                <Grid item xs={12} md={5} lg={4}>
+                    <Item>Hola</Item>
+                </Grid>
+                <Grid item xs={12} md={5} lg={4}>
+                    <Item>Hola</Item>
+                </Grid>
+                <Grid item xs={12} md={5} lg={4}>
+                    <Item>Hola</Item>
+                </Grid>
+            </Grid>
         </main>
     );
 }
