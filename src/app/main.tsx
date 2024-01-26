@@ -28,9 +28,6 @@ export default function Main() {
                 <Grid item xs={12} md={5} lg={4}>
                     <Item>Hola</Item>
                 </Grid>
-                <Grid item xs={12} md={5} lg={4}>
-                    <Item>Hola</Item>
-                </Grid>
             </Grid>
         </main>
     );
