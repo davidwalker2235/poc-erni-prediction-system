@@ -5,6 +5,7 @@ import {AppRouterCacheProvider} from "@mui/material-nextjs/v13-appRouter";
 import DrawerAppBar from "@/app/components/drawerAppBar";
 import {AppProvider} from "@/app/providers/appProvider";
 import SimpleBackdrop from "@/app/components/backdrop";
+import 'leaflet/dist/leaflet.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
