@@ -14,7 +14,8 @@ import Image from 'next/image'
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import {Avatar, CardMedia} from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from "@mui/material/IconButton";
 
 interface Props {
     /**
@@ -25,7 +26,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['About'];
 
 export default function DrawerAppBar(props: Props) {
     const { window } = props;
@@ -38,7 +39,7 @@ export default function DrawerAppBar(props: Props) {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
+                ERNI Prediction System
             </Typography>
             <Divider />
             <List>
@@ -60,6 +61,15 @@ export default function DrawerAppBar(props: Props) {
             <CssBaseline />
             <AppBar component="nav">
                 <Toolbar style={{padding: 20}}>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        edge="start"
+                        onClick={handleDrawerToggle}
+                        sx={{ mr: 2, display: { sm: 'none' } }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
                     <Image
                         src="/ERNI_logo_color.png"
                         width={70}
