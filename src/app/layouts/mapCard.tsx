@@ -4,8 +4,10 @@ import Paper from '@mui/material/Paper';
 import * as React from "react";
 import 'leaflet/dist/leaflet.css';
 import MultiActionAreaCard from "@/app/components/card";
-import Map, {MapType} from "@/app/components/map/map";
+import {MapType} from "@/app/components/map/map";
 import {FormControl, FormControlLabel, FormLabel, Radio, RadioGroup} from "@mui/material";
+import dynamic from 'next/dynamic'
+const Map = dynamic(() => import('@/app/components/map/map'), { ssr: false });
 
 const MapCard = () => {
     const [value, setValue] = React.useState('positions');

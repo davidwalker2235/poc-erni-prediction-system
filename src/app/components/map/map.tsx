@@ -1,3 +1,5 @@
+"use client"
+
 import { MapContainer, TileLayer } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 import HeatMap from "@/app/components/map/heatMap";
