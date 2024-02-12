@@ -7,15 +7,16 @@ export const AppProvider = ({children}: {
     children: React.ReactNode
 }) => {
     const [isLoading, setIsLoad] = useState<boolean>(false)
+    const [locationSelected, setLocationSelected] =
+        useState<{ lat: number, lng: number } | null>(null)
 
     const setIsLoading = (value: any) => {
-        debugger;
         setIsLoad(value)
     }
 
     return (
         // @ts-ignore
-        <AppContext.Provider value={{isLoading, setIsLoading}}>
+        <AppContext.Provider value={{isLoading, setIsLoading, locationSelected, setLocationSelected}}>
             {children}
         </AppContext.Provider>
     );

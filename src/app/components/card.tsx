@@ -5,18 +5,13 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import {
-    Button,
     CardActionArea,
     CardActions,
     Collapse,
-    FormControl,
-    FormControlLabel,
-    FormLabel, Radio,
-    RadioGroup
 } from '@mui/material';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import FullScreenDialog from "@/app/components/fullScreenDialog";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { styled } from '@mui/material/styles';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
@@ -41,17 +36,23 @@ const MultiActionAreaCard = (
         title,
         hasFullScreen,
         hasExpand,
-        expandContent
+        expandContent,
+        isExpanded = false
     }: {
         children: any,
         text: string,
         title: string,
         hasFullScreen?: boolean,
         hasExpand?: boolean,
-        expandContent?: any
+        expandContent?: any,
+        isExpanded?: boolean
     }) => {
     const [isFullScreen, setIsFullScreen] = useState(false)
     const [expanded, setExpanded] = useState(false);
+    useEffect(() => {
+        setExpanded(isExpanded)
+    }, [isExpanded])
+
     const handleOpenFullScreen = () => {
         setIsFullScreen(true);
     };

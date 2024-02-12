@@ -23,7 +23,7 @@ const Map = ({center, mapType, hasFullScreen}: {center: [number, number], mapTyp
                 attribution='&copy; <a href="https://www.betterask.erni/">ERNI Consulting</a>'
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
-            {(mapType === MapType.positions) && markers.map((data) => <LocationPoint {...data} />)}
+            {(mapType === MapType.positions) && markers.map((data, index) => <LocationPoint {...data} key={`location-${index}`} />)}
         </MapContainer>
     )
 }
