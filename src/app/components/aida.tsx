@@ -6,8 +6,6 @@ import {useState} from "react";
 import Box from '@mui/material/Box';
 import {Fade, Popper, TextField} from "@mui/material";
 import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import TextareaComponent from "@/app/components/textArea";
 import InputComponent from "@/app/components/input";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({

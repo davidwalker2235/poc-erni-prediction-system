@@ -17,6 +17,10 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children
 }: any) {
+    const endPoint = "https://esp-services-dataoffering-openai-uksouth.openai.azure.com/";
+    const azureApiKey = "bd17a73f46a348b1b73a1d97c4eab3bb"
+    const deploymentId = "gpt-4-1106-preview";
+
   return (
     <html lang="en">
     <head>
@@ -29,9 +33,9 @@ export default function RootLayout({
       <body className={inter.className}>
             <AppRouterCacheProvider options={{ enableCssLayer: true }}>
                 <AppProvider>
-                    <SimpleBackdrop />
-                    <DrawerAppBar />
-                    {children}
+                        <SimpleBackdrop />
+                        <DrawerAppBar />
+                        {children}
                 </AppProvider>
             </AppRouterCacheProvider>
       </body>
