@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Image from "next/image";
-import {Aida, AidaProvider} from "../../../../aida-chatbot/src/main"
+import {Aida, AidaProvider} from "aida-chatbot"
 
 export default function ButtonAppBar() {
     const endPoint = "https://esp-services-dataoffering-openai-uksouth.openai.azure.com/";
